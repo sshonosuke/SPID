@@ -36,8 +36,8 @@ Output of `PWD`: List object of MCMC results
 - `Hessian`: (m,p,p)-array of Hessian matrices for maximum likelihood estimates
 
 ```{r}
-mc=1500
-bn=500
+mc=1500   # length of MCMC
+bn=500   # burn-in period
 
 set.seed(1)
 fit1=PWD(Data,Z,W,mc,bn)
@@ -75,10 +75,10 @@ fit3=IRE(Data,Z,mc,bn)
 
 Posterior means of area-wise parameters 
 ```{r}
-apply(fit1$U,c(2,3),mean)   
-apply(fit2$U,c(2,3),mean)
-apply(fit3$U,c(2,3),mean)
-fit1$ML
+apply(fit1$U,c(2,3),mean)  # PWD
+apply(fit2$U,c(2,3),mean)  # PWL   
+apply(fit3$U,c(2,3),mean)  # IRE
+fit1$ML       # area-wise maximum likelihood  
 ```
 
 Posterior means of precision parameters (Tau) 
