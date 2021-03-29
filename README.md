@@ -1,9 +1,9 @@
 # SPID
 This package implements Bayesian spatial estimaton for area-wise income distributions from grouped data, as proposed by the following papers.
 
-Sugasawa, S., Kobayashi, G. and Kawakubo, Y. (2020). Estimation and inference for area-wise spatial income distributions from grouped data. Computational Statistics & Data Analysis, to appear  (https://arxiv.org/abs/1904.11109)
+Sugasawa, S., Kobayashi, G. and Kawakubo, Y. (2021). Estimation and inference for area-wise spatial income distributions from grouped data. Computational Statistics & Data Analysis 145, 106904. (journal: https://www.sciencedirect.com/science/article/abs/pii/S0167947319302592?via%3Dihub, arXiv: https://arxiv.org/abs/1904.11109)
 
-Functions are implemented in SPID-function.R available in the repository.
+Functions are implemented in `SPID-function.R` available in the repository.
 
 ```{r}
 source("SPID-function.R")   # require "MCMCpack", "sparseM" and "statmod" packages
@@ -19,7 +19,7 @@ Fit the proposed models (PWD and PWL)
 Input of `PWD` 
 
 - `Data`: (m,N)-matrix of observed counts (m: number of areas; N: number of groups)
-- `Z`: vector of boudary values for grouping 
+- `Z`: vector of boudary values for grouping (better to be scaled such that most values lie in $[0, 10]$)
 - `W`: adjacent matrix
 - `mcmc`: length of MCMC 
 - `burn`: burn-in period
@@ -36,11 +36,11 @@ Output of `PWD`: List object of MCMC results
 - `Hessian`: (m,p,p)-array of Hessian matrices for maximum likelihood estimates
 
 ```{r}
-mc=1500   # length of MCMC
-bn=500   # burn-in period
+mc <- 1500   # length of MCMC
+bn <- 500   # burn-in period
 
 set.seed(1)
-fit1=PWD(Data,Z,W,mc,bn)
+fit1 <- PWD(Data, Z, W, mc, bn)
 ```
 
 Input of `PWL` 
