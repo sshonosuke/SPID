@@ -1,7 +1,7 @@
 # SPID
 This package implements Bayesian spatial estimaton for area-wise income distributions from grouped data, as proposed by the following papers.
 
-Sugasawa, S., Kobayashi, G. and Kawakubo, Y. (2021). Estimation and inference for area-wise spatial income distributions from grouped data. Computational Statistics & Data Analysis 145, 106904. ([journal](https://www.sciencedirect.com/science/article/abs/pii/S0167947319302592?via%3Dihub), arXiv: https://arxiv.org/abs/1904.11109)
+Sugasawa, S., Kobayashi, G. and Kawakubo, Y. (2021). Estimation and inference for area-wise spatial income distributions from grouped data. Computational Statistics & Data Analysis 145, 106904. ([journal](https://www.sciencedirect.com/science/article/abs/pii/S0167947319302592?via%3Dihub), [arXiv]( https://arxiv.org/abs/1904.11109))
 
 Functions are implemented in `SPID-function.R` available in the repository.
 
