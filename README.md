@@ -19,7 +19,7 @@ Fit the proposed models (PWD and PWL)
 Input of `PWD` 
 
 - `Data`: (m,N)-matrix of observed counts (m: number of areas; N: number of groups)
-- `Z`: vector of boudary values for grouping (better to be scaled such that most values lie in $[0, 10]$)
+- `Z`: vector of boudary values for grouping (better to be scaled such that most values lie in [0, 10])
 - `W`: adjacent matrix
 - `mcmc`: length of MCMC 
 - `burn`: burn-in period
@@ -64,33 +64,33 @@ Output of `PWL`: List object of MCMC results
 - `Hessian`: (m,p,p)-array of Hessian matrices for maximum likelihood estimates
 
 ```{r}
-fit2=PWL(Data,Z,W,mc,bn)
+fit2 <- PWL(Data, Z, W, mc, bn)
 ```
 
 We can also apply independent random effects model as a submodel of the proposed models.  
 Input and Output are almost the same as `PWD`.
 ```{r}
-fit3=IRE(Data,Z,mc,bn)
+fit3 <- IRE(Data, Z, mc, bn)
 ```
 
 Posterior means of area-wise parameters 
 ```{r}
-apply(fit1$U,c(2,3),mean)  # PWD
-apply(fit2$U,c(2,3),mean)  # PWL   
-apply(fit3$U,c(2,3),mean)  # IRE
+apply(fit1$U, c(2,3), mean)  # PWD
+apply(fit2$U, c(2,3), mean)  # PWL   
+apply(fit3$U, c(2,3), mean)  # IRE
 fit1$ML       # area-wise maximum likelihood  
 ```
 
 Posterior means of precision parameters (Tau) 
 ```{r}
-apply(fit1$Tau,2,mean)   
-apply(fit2$Tau,2,mean)
-apply(fit3$Tau,2,mean)
+apply(fit1$Tau, 2, mean)   
+apply(fit2$Tau, 2, mean)
+apply(fit3$Tau, 2, mean)
 ```
 
 Posterior means of precision parameters (Lambda) 
 ```{r}
-apply(fit1$Lam,2,mean)
+apply(fit1$Lam, 2, mean)
 mean(fit2$Lam)
 ```
 
